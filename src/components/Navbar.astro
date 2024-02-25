@@ -14,7 +14,7 @@ const {links} = Astro.props
   </div>
   <div class="flex-none hidden lg:block navbar-center">
     <div class="flex items-stretch">
-      {links.map((item: any, index: any) => {
+      {links.map((item: any) => {
         if (item.type === 'dropdown') {
           return (
             <div class="dropdown dropdown-hover">
