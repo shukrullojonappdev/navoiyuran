@@ -1,16 +1,87 @@
 ---
-
-
 import Layout from '../../layouts/uz/Layout.astro';
 
-import Navbar from '../../components/Navbar.astro';
-import DrawerSide from '../../components/DrawerSide.astro'
+import SiteSwiper from '../../components/SiteSwiper.astro'
+import UzMap from '../../components/UzMap.astro'
+
+import {SLIDER_IMAGES_UZ} from '../../shared/consts'
 ---
 
+<Layout title="Navoiyuran - Davlat korxoansi">
+	<div class="mb-[80px]">
+		<h1 class="text-center font-bold text-lg md:text-xl lg:text-3xl my-3 md:my-8 lg:my-14">
+			<span class="text-xl md:text-2xl lg:text-4xl bg-gradient-to-t from-blue-600 to-indigo-400 text-transparent bg-clip-text">"Navoiyuran" Davlat korxonasi</span>
+			<br>
+			O'zbekistonda uran qazib chiqarish va uranning chala oksidi-oksidi
+			<br>
+			ko'rinishidagi tayyor mahsulotni eksport qilish bilan shug'ullanuvchi yagona korxona.
+		</h1>
+		<SiteSwiper slides={SLIDER_IMAGES_UZ} />
+	</div>
 
+	<div class="flex justify-center mb-[100px]">
+		<div class="stats shadow stats-vertical lg:stats-horizontal w-96 lg:w-auto">
+			<div class="stat min-w-56">
+				<div class="stat-figure text-secondary">
+					<span class="material-symbols-outlined text-primary">
+						group
+					</span>
+				</div>
+				<div class="stat-title">Xodimlar</div>
+				<div class="stat-value">9,000</div>
+				<div class="stat-desc">soni</div>
+			</div>
+			
+			<div class="stat min-w-56">
+				<div class="stat-figure text-secondary">
+					<span class="material-symbols-outlined text-primary">
+						work
+					</span>
+				</div>
+				<div class="stat-title">Burg'ilash</div>
+				<div class="stat-value">1,130</div>
+				<div class="stat-desc">hududlar</div>
+			</div>
+			
+			<div class="stat min-w-56">
+				<div class="stat-figure text-secondary">
+					<span class="material-symbols-outlined text-primary">
+						experiment
+					</span>
+				</div>
+				<div class="stat-title">Eritmalar</div>
+				<div class="stat-value">250</div>
+				<div class="stat-desc">million m<sup>3</sup></div>
+			</div>
 
-<Layout title="Welcome to Astro.">
-	asdf
+			<div class="stat min-w-56">
+				<div class="stat-figure text-secondary">
+					<span class="material-symbols-outlined text-primary">
+						star
+					</span>
+				</div>
+				<div class="stat-title">Dunyodagi o'rin</div>
+				<div class="stat-value">5</div>
+				<div class="stat-desc">uran qazib olish</div>
+			</div>
+			<div class="stat min-w-56">
+				<div class="stat-figure text-secondary">
+					<span class="material-symbols-outlined text-primary">
+						location_on
+					</span>
+				</div>
+				<div class="stat-title">Konlar</div>
+				<div class="stat-value">21</div>
+				<div class="stat-desc">qazib olish</div>
+			</div>
+		</div>
+	</div>
+	<div class="flex flex-col justify-center items-center mb-[100px]">
+		<h2 class="font-semibold text-lg lg:text-3xl mb-10 text-center">Bizning bo'linmalar</h2>
+		<div class="w-full md:px-10 max-w-[1200px]">
+			<UzMap />
+		</div>
+	</div>
 </Layout>
 
 <style></style>

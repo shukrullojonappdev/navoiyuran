@@ -1,0 +1,37 @@
+---
+// import Swiper styles
+import 'swiper/css/bundle';
+
+const { slides } = Astro.props
+---
+<script>
+  // import Swiper JS
+  import Swiper from 'swiper';
+  import { Autoplay } from 'swiper/modules';
+
+  const swiper = new Swiper('.swiper', {
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    speed: 500,
+    spaceBetween: 15,
+    modules: [Autoplay]
+  });
+</script>
+
+<!-- Slider main container -->
+<div id="mainSwiper" class="swiper max-w-full z-0 rounded-box">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    {slides.map((item: any) => (
+
+      <div class="swiper-slide">
+        <div class="carousel-item h-[200px] md:h-[400px] lg:h-[600px]">
+          <img src={item.path} class="w-full object-cover rounded-box" alt={item.alt} />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

@@ -8,7 +8,8 @@ const { title } = Astro.props;
 import { LINKS_UZ } from '../../shared/consts/links.ts';
 
 import Navbar from '../../components/Navbar.astro';
-import DrawerSide from '../../components/DrawerSide.astro'
+import Footer from '../../components/Footer.astro';
+import DrawerSide from '../../components/DrawerSide.astro';
 ---
 
 <!doctype html>
@@ -18,6 +19,7 @@ import DrawerSide from '../../components/DrawerSide.astro'
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -25,9 +27,14 @@ import DrawerSide from '../../components/DrawerSide.astro'
 		<div class="drawer">
 			<input id="site-drawer" type="checkbox" class="drawer-toggle" /> 
 			<div class="drawer-content flex flex-col">
-				<Navbar links={LINKS_UZ} />
-				<!-- Page content here -->	
-				<slot />
+				<div class="fixed top-0 right-0 left-0 z-10 backdrop-blur-md before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-z-10 before:bg-base-100 before:opacity-60">
+					<Navbar links={LINKS_UZ} />
+				</div>
+				<!-- Page content here -->
+				<div class="p-2 pt-[100px] w-full max-w-[1800px] mx-auto">
+					<slot />
+				</div>
+				<Footer />
 			</div> 
 			<DrawerSide links={LINKS_UZ} />
 		</div>
