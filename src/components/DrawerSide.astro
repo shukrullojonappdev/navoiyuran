@@ -1,0 +1,29 @@
+---
+const {links} = Astro.props
+---
+
+<div class="drawer-side z-20">
+  <label for="site-drawer" aria-label="close sidebar" class="drawer-overlay"></label> 
+  <ul class="menu p-4 w-80 min-h-full bg-base-200 max-w-[320px]">
+    <!-- Sidebar content here -->
+    {links.map((item: any) => {
+      if(item.type === 'dropdown') {
+        return (
+          <li>
+            <details>
+              <summary>{item.title}</summary>
+              <ul>
+                {item.items.map((item: any) => (
+                  <li><a>{item.title}</a></li>
+                ))}
+              </ul>
+            </details>
+          </li>
+        )
+      }
+      return (
+        <li><a>{item.title}</a></li>
+      )
+    })}
+  </ul>
+</div>

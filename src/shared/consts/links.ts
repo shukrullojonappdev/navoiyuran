@@ -1,4 +1,4 @@
-import { type INavbarItem } from "../interfaces";
+import type { INavbarItem } from "../interfaces";
 
 export const LINKS_UZ: INavbarItem[] = [
   {
@@ -7,27 +7,27 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Rivojlanish tarixi",
-        href: "/",
+        href: "/uz/history/",
         type: "link",
       },
       {
         title: "Investitsiya dasturi",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Tashkilot pasporti",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Mehnat muhofazasi va xavfsizlik",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Atrof-mugit  muhofazasi",
-        href: "/",
+        href: "#",
         type: "link",
       },
     ],
@@ -38,32 +38,32 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Ta'sischi",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Kuzatuv kengashi",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Rahbariyat",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Tuzilma",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Bizning bo'linmalar",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Me'moriy hujjatlar",
-        href: "/",
+        href: "#",
         type: "link",
       },
     ],
@@ -74,59 +74,59 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Geologik qidiruv",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Qazib olish",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Noyob metallar",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Sulfat kislotasi ishlab chiqarish",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Quvur mahsulotlari ishlab chiqarish",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Innovatsion faoliyat",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Xaridlar",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Sanoat kooperatsiyasi",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Kengaytirish va mahalliylashtirish",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Boshqa faoliyatlar",
-        href: "/",
+        href: "#",
         type: "link",
       },
     ],
   },
   {
     title: "Ochiq ma'lumotlar",
-    href: "/",
+    href: "#",
     type: "link",
   },
   {
@@ -135,27 +135,27 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Davlat dasturi",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Axborot xizmati bilan aloqa",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Videogalereya",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Fotogalereya",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Yangiliklar",
-        href: "/",
+        href: "#",
         type: "link",
       },
     ],
@@ -166,27 +166,27 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Biz bilan aloqa",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "E'lonlar",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Bo'sh ish o'rinlari",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Statistika",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Sayt xaritasi",
-        href: "/",
+        href: "#",
         type: "link",
       },
     ],
@@ -197,22 +197,22 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Komplaensga murojaat",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Korrupsoyaga qarshi siyosat",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Komplaens xizmatiga oid ichki normativ hujjarlar",
-        href: "/",
+        href: "#",
         type: "link",
       },
       {
         title: "Korrupsiyaga qarshi kurashish bo'yicha me'moriy hujjatlar",
-        href: "/",
+        href: "#",
         type: "link",
       },
     ],
