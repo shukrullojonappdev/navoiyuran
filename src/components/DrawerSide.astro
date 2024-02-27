@@ -5,6 +5,51 @@ const {links} = Astro.props
 <div class="drawer-side z-20">
   <label for="site-drawer" aria-label="close sidebar" class="drawer-overlay"></label> 
   <ul class="menu p-4 w-80 min-h-full bg-base-200 max-w-[320px]">
+    <div class="flex w-full items-center justify-end">
+      <div class="flex items-center mr-4">
+        <span class="material-symbols-outlined text-primary mr-1">
+          call
+        </span>
+        <a href="tel:+998795070050">+998795070050</a>
+      </div>
+      <div class="flex items-center mr-4">
+        <span class="material-symbols-outlined text-primary mr-1">
+          mail
+        </span>
+        <a href="mailto:info@navoiyuran.uz">info@navoiyuran.uz</a>
+      </div>
+      <label class="input input-sm flex items-center gap-2 mr-4 input-bordered">
+        <input id="search" type="text" class="grow" placeholder="Search" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70"><path fill-rule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clip-rule="evenodd" /></svg>
+      </label>
+      <select id="lang" class="select select-bordered select-sm max-w-xs mr-4">
+        <option disabled selected>UZ</option>
+        <option>RU</option>
+        <option>EN</option>
+      </select>
+      <input id="font-size" type="range" min="16" max="22" value="16" class="range range-primary range-sm mr-4 w-[100px]" step="2" />
+      <label class="btn btn-circle btn-ghost swap swap-rotate mr-2">
+        <input type="checkbox" id="contrast-toggle" value="false" />
+        <span class="material-symbols-outlined swap-on text-3xl">
+          eyeglasses
+        </span>
+        <span class="material-symbols-outlined swap-off text-3xl">
+          eyeglasses
+        </span>
+      </label>
+      <label class="swap swap-rotate mr-2">
+  
+        <!-- this hidden checkbox controls the state -->
+        <input id="theme-toggle1" type="checkbox" class="theme-controller" data-toggle-theme="light,dark" data-act-class="ACTIVECLASS" />
+        
+        <!-- sun icon -->
+        <svg id="sun-icon1" class="fill-current w-6 h-6 lg:w-8 lg:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/></svg>
+        
+        <!-- moon icon -->
+        <svg id="moon-icon1" class="fill-current w-6 h-6 lg:w-8 lg:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+        
+      </label>
+    </div>
     <!-- Sidebar content here -->
     {links.map((item: any) => {
       if(item.type === 'dropdown') {
@@ -27,3 +72,73 @@ const {links} = Astro.props
     })}
   </ul>
 </div>
+
+<script>
+  const theme = localStorage.getItem('theme')
+  const contrast = localStorage.getItem('contrast')
+  const fontSize = localStorage.getItem('fontSize')
+  const moonIcon = document.getElementById('moon-icon')
+  const sunIcon = document.getElementById('sun-icon')
+  const themeToggle: any = document.getElementById('theme-toggle')
+  const contrastToggle: any = document.getElementById('contrast-toggle')
+  const fontSizeElement: any = document.getElementById('font-size')
+  const html = document.getElementsByTagName('html')[0]
+
+  if(theme && sunIcon && moonIcon && themeToggle) {
+    if (theme === 'light') {
+      sunIcon.classList.add('swap-on')
+      moonIcon.classList.add('swap-off')
+      themeToggle.value = 'dark'
+    }
+    if (theme === 'dark') {
+      sunIcon.classList.add('swap-off')
+      moonIcon.classList.add('swap-on')
+      themeToggle.value = 'light'
+    }
+  } else {
+    if ((sunIcon && moonIcon && themeToggle)) {
+      if(window.matchMedia('(prefers-color-scheme: dark)')) {
+        sunIcon.classList.add('swap-off')
+        moonIcon.classList.add('swap-on')
+        themeToggle.value = 'light'
+      } else {
+        sunIcon.classList.add('swap-on')
+        moonIcon.classList.add('swap-off')
+        themeToggle.value = 'dark'
+      }
+    }
+  }
+
+  if(fontSize) {
+    fontSizeElement.value = fontSize
+    html && (html.setAttribute('style', `font-size: ${fontSize}px`))
+  }
+
+  if(fontSizeElement) {
+    fontSizeElement.onchange = (e: any) => {
+      html && (html.setAttribute('style', `font-size: ${e.target.value}px`))
+      localStorage.setItem('fontSize', e.target.value)
+    }
+  }
+
+  if(contrast) {
+    if(contrast === 'true') {
+      contrastToggle.value = 'true'
+      html.classList.add('contrast')
+    }
+  }
+
+  if(contrastToggle) {
+    contrastToggle.onchange = (e: any) => {
+      if(e.target.value === 'false') {
+        contrastToggle.value = 'true'
+        localStorage.setItem('contrast', 'true')
+        html.classList.add('contrast')
+      } else {
+        contrastToggle.value = 'false'
+        localStorage.setItem('contrast', 'false')
+        html.classList.remove('contrast')
+      }
+    }
+  }
+</script>
