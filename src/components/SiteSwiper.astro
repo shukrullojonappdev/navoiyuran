@@ -29,7 +29,7 @@ const { slides } = Astro.props
 
       <div class="swiper-slide">
         <div class="carousel-item h-[200px] md:h-[400px] lg:h-[600px]">
-          <img src={item.path} class="w-full object-cover rounded-box" alt={item.alt} />
+          <img loading="lazy" src={item.path} class="w-full object-cover rounded-box" alt={item.alt} />
         </div>
       </div>
     ))}
