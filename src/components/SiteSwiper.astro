@@ -3,7 +3,10 @@
 import 'swiper/css/bundle';
 import { Image } from 'astro:assets';
 
-const { slides } = Astro.props
+// import bosh_bino from "../assets/images/bosh_bino.webp";
+// import jarayon from "../assets/images/jarayon.webp";
+// import burgulash from "../assets/images/burgulash.webp";
+// import tabiat from "../assets/images/tabiat.webp";
 ---
 <script>
   // import Swiper JS
@@ -25,14 +28,25 @@ const { slides } = Astro.props
 <div id="mainSwiper" class="swiper max-w-full z-0 rounded-box">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
-    <!-- Slides -->
-    {slides.map((item: any) => (
-
-      <div class="swiper-slide">
-        <div class="carousel-item h-[200px] md:h-[400px] lg:h-[600px]">
-          <Image loading="eager" src={item.path} class="w-full object-cover rounded-box" alt={item.alt} width={5000} height={1406} />
-        </div>
+    <div class="swiper-slide">
+      <div class="carousel-item h-[200px] md:h-[400px] lg:h-[600px]">
+        <Image loading="eager" src="/images/bosh_bino.webp" class="w-full object-cover rounded-box" alt="bosh_binosi" width={5000} height={1406} />
       </div>
-    ))}
+    </div>
+    <div class="swiper-slide">
+      <div class="carousel-item h-[200px] md:h-[400px] lg:h-[600px]">
+        <Image loading="eager" src="/images/jarayon.webp" class="w-full object-cover rounded-box" alt="jarayon" width={5000} height={1406} />
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="carousel-item h-[200px] md:h-[400px] lg:h-[600px]">
+        <Image loading="eager" src="/images/burgulash.webp" class="w-full object-cover rounded-box" alt="burg'ulash" width={5000} height={1406} />
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="carousel-item h-[200px] md:h-[400px] lg:h-[600px]">
+        <Image loading="eager" src="/images/tabiat.webp" class="w-full object-cover rounded-box" alt="tabiat" width={5000} height={1406} />
+      </div>
+    </div>
   </div>
 </div>
