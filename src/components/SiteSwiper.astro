@@ -1,6 +1,7 @@
 ---
 // import Swiper styles
 import 'swiper/css/bundle';
+import { Image } from 'astro:assets';
 
 const { slides } = Astro.props
 ---
@@ -29,7 +30,7 @@ const { slides } = Astro.props
 
       <div class="swiper-slide">
         <div class="carousel-item h-[200px] md:h-[400px] lg:h-[600px]">
-          <img loading="lazy" src={item.path} class="w-full object-cover rounded-box" alt={item.alt} />
+          <Image loading="eager" src={item.path} class="w-full object-cover rounded-box" alt={item.alt} width={5000} height={1406} />
         </div>
       </div>
     ))}
