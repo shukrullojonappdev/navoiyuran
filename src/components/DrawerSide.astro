@@ -4,26 +4,88 @@ const {links} = Astro.props
 
 <div class="drawer-side z-20">
   <label for="site-drawer" aria-label="close sidebar" class="drawer-overlay"></label> 
-  <ul class="menu p-4 w-80 min-h-full bg-base-200 max-w-[320px]">
-    <!-- Sidebar content here -->
-    {links.map((item: any) => {
-      if(item.type === 'dropdown') {
-        return (
-          <li>
-            <details>
-              <summary>{item.title}</summary>
-              <ul>
-                {item.items.map((item: any) => (
-                  <li><a>{item.title}</a></li>
-                ))}
-              </ul>
-            </details>
-          </li>
-        )
-      }
-      return (
-        <li><a>{item.title}</a></li>
-      )
-    })}
-  </ul>
+  <div class=" p-4 w-80 min-h-full bg-base-200 max-w-[320px] flex flex-col justify-between">
+    <div>
+      <div id="draw-search" class="flex items-center justify-between mb-2"></div>
+      <div id="draw-accessible" class="flex items-center justify-between mb-2"></div>
+      <ul class="menu">
+        <!-- Sidebar content here -->
+        {links.map((item: any) => {
+          if(item.type === 'dropdown') {
+            return (
+              <li>
+                <details>
+                  <summary>{item.title}</summary>
+                  <ul>
+                    {item.items.map((item: any) => (
+                      <li><a href={item.href} aria-label={item.title}>{item.title}</a></li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            )
+          }
+          return (
+            <li><a href={item.href} aria-label={item.title}>{item.title}</a></li>
+          )
+        })}
+      </ul>
+    </div>
+    <div id="draw-info" class="flex flex-col"></div>
+  </div>
 </div>
+
+<script>
+  window.onresize = async (e: any) => {
+    await moveElements(e.target.innerWidth);
+  }
+
+  window.onload = async (e: any) => {
+    await moveElements(e.currentTarget.innerWidth);
+  }
+
+  async function moveElements(width: number) {
+    const phoneInfo: any = document.getElementById('phone-info')
+    const emailInfo: any = document.getElementById('email-info')
+    const search: any = document.getElementById('search')
+    const langChange: any = document.getElementById('lang-change')
+    const fontSizeElement: any = document.getElementById('font-size')
+    const contrastChange: any = document.getElementById('contrast-change')
+    const themeChange: any = document.getElementById('theme-change')
+
+    const accessible = document.getElementById('draw-accessible')
+    const drawSearch = document.getElementById('draw-search')
+    const info = document.getElementById('draw-info')
+    const navRow = document.getElementById('nav-row')
+    const navCol = document.getElementById('nav-col')
+
+    if(width >= 1401 && navRow) {
+      navRow.appendChild(phoneInfo)
+      navRow.appendChild(emailInfo)
+      navRow.appendChild(search)
+      navRow.appendChild(langChange)
+      navRow.appendChild(fontSizeElement)
+      navRow.appendChild(contrastChange)
+      navRow.appendChild(themeChange)
+    }
+
+    if(width <= 1399) {
+      if(navCol) {
+        navCol.insertBefore(langChange, navCol.childNodes[0])
+      }
+      if(drawSearch) {
+        drawSearch.appendChild(search)
+      }
+      if(accessible) {
+        accessible.appendChild(fontSizeElement)
+        accessible.appendChild(contrastChange)
+        accessible.appendChild(themeChange)
+      }
+      if(info) {
+        info.appendChild(phoneInfo)
+        info.appendChild(emailInfo)
+      }
+    }
+  }
+
+</script>

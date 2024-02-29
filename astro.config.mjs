@@ -1,8 +1,18 @@
-import { defineConfig } from 'astro/config';
-
+import { defineConfig } from "astro/config";
+// import node from "@astrojs/node";
+import cloudflare from "@astrojs/cloudflare";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  prefetch: true,
+  // output: "server",
+  // adapter: node({
+  //   mode: "standalone",
+  // }),
+  output: "hybrid",
+  adapter: cloudflare({
+    imageService: "cloudflare",
+  }),
+  integrations: [tailwind()],
 });

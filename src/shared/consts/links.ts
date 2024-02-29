@@ -1,6 +1,6 @@
 import type { INavbarItem } from "../interfaces";
 
-export const LINKS_UZ: INavbarItem[] = [
+export const NAVBAR_LINKS_UZ: INavbarItem[] = [
   {
     title: "Biz haqimizda",
     type: "dropdown",
@@ -12,22 +12,22 @@ export const LINKS_UZ: INavbarItem[] = [
       },
       {
         title: "Investitsiya dasturi",
-        href: "#",
+        href: "/uz/insvestment/",
         type: "link",
       },
       {
         title: "Tashkilot pasporti",
-        href: "#",
+        href: "/uz/pasport/",
         type: "link",
       },
       {
         title: "Mehnat muhofazasi va xavfsizlik",
-        href: "#",
+        href: "/uz/mmx/",
         type: "link",
       },
       {
-        title: "Atrof-mugit  muhofazasi",
-        href: "#",
+        title: "Atrof-muhit  muhofazasi",
+        href: "/uz/amm/",
         type: "link",
       },
     ],
@@ -38,32 +38,32 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Ta'sischi",
-        href: "#",
+        href: "/uz/founder/",
         type: "link",
       },
       {
         title: "Kuzatuv kengashi",
-        href: "#",
+        href: "/uz/board/",
         type: "link",
       },
       {
         title: "Rahbariyat",
-        href: "#",
+        href: "/uz/management/",
         type: "link",
       },
       {
         title: "Tuzilma",
-        href: "#",
+        href: "/uz/structure/",
         type: "link",
       },
       {
         title: "Bizning bo'linmalar",
-        href: "#",
+        href: "/uz/divisions/",
         type: "link",
       },
       {
         title: "Me'moriy hujjatlar",
-        href: "#",
+        href: "/uz/documents/",
         type: "link",
       },
     ],
@@ -74,59 +74,54 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Geologik qidiruv",
-        href: "#",
+        href: "/uz/geological/",
         type: "link",
       },
       {
         title: "Qazib olish",
-        href: "#",
+        href: "/uz/mining/",
         type: "link",
       },
       {
         title: "Noyob metallar",
-        href: "#",
+        href: "/uz/rare/",
         type: "link",
       },
       {
         title: "Sulfat kislotasi ishlab chiqarish",
-        href: "#",
+        href: "/uz/psk/",
         type: "link",
       },
       {
         title: "Quvur mahsulotlari ishlab chiqarish",
-        href: "#",
+        href: "/uz/polietilen/",
         type: "link",
       },
       {
         title: "Innovatsion faoliyat",
-        href: "#",
+        href: "/uz/innavation/",
         type: "link",
       },
       {
         title: "Xaridlar",
-        href: "#",
+        href: "/uz/purchase/",
         type: "link",
       },
       {
-        title: "Sanoat kooperatsiyasi",
-        href: "#",
-        type: "link",
-      },
-      {
-        title: "Kengaytirish va mahalliylashtirish",
-        href: "#",
+        title: "Sanoat kooperatsiyasi kengaytirish va mahalliylashtirish",
+        href: "/uz/cooperative/",
         type: "link",
       },
       {
         title: "Boshqa faoliyatlar",
-        href: "#",
+        href: "/uz/otheractivities/",
         type: "link",
       },
     ],
   },
   {
     title: "Ochiq ma'lumotlar",
-    href: "#",
+    href: "/uz/public/",
     type: "link",
   },
   {
@@ -135,27 +130,27 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Davlat dasturi",
-        href: "#",
+        href: "/uz/stateprogram/",
         type: "link",
       },
       {
         title: "Axborot xizmati bilan aloqa",
-        href: "#",
+        href: "/uz/pressa/",
         type: "link",
       },
       {
         title: "Videogalereya",
-        href: "#",
+        href: "/uz/video/",
         type: "link",
       },
       {
         title: "Fotogalereya",
-        href: "#",
+        href: "/uz/photo/",
         type: "link",
       },
       {
         title: "Yangiliklar",
-        href: "#",
+        href: "/uz/allnews/",
         type: "link",
       },
     ],
@@ -166,27 +161,27 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Biz bilan aloqa",
-        href: "#",
+        href: "/uz/contact/",
         type: "link",
       },
       {
         title: "E'lonlar",
-        href: "#",
+        href: "/uz/announcement/",
         type: "link",
       },
       {
         title: "Bo'sh ish o'rinlari",
-        href: "#",
+        href: "#/uz/jobs/",
         type: "link",
       },
       {
         title: "Statistika",
-        href: "#",
+        href: "/uz/statistic/",
         type: "link",
       },
       {
         title: "Sayt xaritasi",
-        href: "#",
+        href: "/uz/maps/",
         type: "link",
       },
     ],
@@ -197,22 +192,22 @@ export const LINKS_UZ: INavbarItem[] = [
     items: [
       {
         title: "Komplaensga murojaat",
-        href: "#",
+        href: "/uz/complaens/",
         type: "link",
       },
       {
         title: "Korrupsoyaga qarshi siyosat",
-        href: "#",
+        href: "/uz/anticor/",
         type: "link",
       },
       {
         title: "Komplaens xizmatiga oid ichki normativ hujjarlar",
-        href: "#",
+        href: "/uz/anticorethics/",
         type: "link",
       },
       {
         title: "Korrupsiyaga qarshi kurashish bo'yicha me'moriy hujjatlar",
-        href: "#",
+        href: "/uz/anticorfiles/",
         type: "link",
       },
     ],

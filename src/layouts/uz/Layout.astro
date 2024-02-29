@@ -5,10 +5,10 @@ interface Props {
 
 const { title } = Astro.props;
 
-import { LINKS_UZ } from '../../shared/consts/links.ts';
+import { NAVBAR_LINKS_UZ } from '../../shared/consts/links.ts';
 
 import Navbar from '../../components/Navbar.astro';
-import Footer from '../../components/Footer.astro';
+// import Footer from '../../components/Footer.astro';
 import DrawerSide from '../../components/DrawerSide.astro';
 ---
 
@@ -19,7 +19,9 @@ import DrawerSide from '../../components/DrawerSide.astro';
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"></noscript>
+		<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -27,16 +29,35 @@ import DrawerSide from '../../components/DrawerSide.astro';
 		<div class="drawer">
 			<input id="site-drawer" type="checkbox" class="drawer-toggle" /> 
 			<div class="drawer-content flex flex-col">
-				<div class="fixed top-0 right-0 left-0 z-10 backdrop-blur-md before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-z-10 before:bg-base-100 before:opacity-60">
-					<Navbar links={LINKS_UZ} />
+				<div class="relative top-0 right-0 left-0 z-10 backdrop-blur-md before:absolute before:top-0 before:left-0 before:w-full before:h-full before:-z-10 before:bg-base-100 before:opacity-60">
+					<Navbar links={NAVBAR_LINKS_UZ} />
 				</div>
 				<!-- Page content here -->
-				<div class="p-2 pt-[100px] w-full max-w-[1800px] mx-auto">
+				<div class="p-2 w-full max-w-[1800px] mx-auto relative">
 					<slot />
 				</div>
-				<Footer />
+				<!-- <Footer /> -->
 			</div> 
-			<DrawerSide links={LINKS_UZ} />
+			<DrawerSide links={NAVBAR_LINKS_UZ} />
+		</div>
+		<div class="fixed z-10 bottom-3 left-3">
+			<button id="scrollToTop" class="btn btn-circle bg-base-300">
+				<span class="material-symbols-outlined">
+					arrow_upward
+				</span>
+			</button>
 		</div>
 	</body>
 </html>
+
+<style>
+	.contrast {
+		filter: grayscale(1);
+	}
+</style>
+
+<script>
+	const scrollToTop = document.getElementById('scrollToTop')
+
+	scrollToTop && (scrollToTop.onclick = () => (window.scrollTo({ top: 0, behavior: 'smooth' })))
+</script>
