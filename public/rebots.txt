@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /**/*.css
+Host: https://navoiyuran.pages.dev
